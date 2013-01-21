@@ -33,6 +33,8 @@ object UploadSnippet {
   }
 
   def saveFile(fp: FileParamHolder): Unit = {
+    println("--> FileParamHolder filename=" + fp.fileName + ", length=" + fp.length + ", mimeType=" + fp.mimeType +
+      ", name=" +fp.name)
     fp.file match {
       case null =>  //S.error if here
       case x if x.length == 0 => println("--> File size is 0") //S.error if here
@@ -41,4 +43,13 @@ object UploadSnippet {
       }
     }
   }
+}
+
+object ImageStorage {
+
+  private val images = Nil
+
+  def addImage(image: FileParamHolder) {
+  }
+
 }
